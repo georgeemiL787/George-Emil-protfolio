@@ -816,4 +816,12 @@ body.dark-mode .skills-list li::before {
   margin-right: 0.7rem;
   margin-bottom: 0.2rem;
   display: inline-block;
-} 
+}
+
+<form id="contact-form" action="https://formspree.io/f/xjkrpnkj" method="POST">
+  <input type="text" id="name" name="name" placeholder="Your Name" required>
+  <input type="email" id="email" name="email" placeholder="Your Email" required>
+  <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+  <button type="submit">Send Message</button>
+  <div id="form-feedback" style="display:none;"></div>
+</form> 
