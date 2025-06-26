@@ -116,7 +116,7 @@ darkToggle.addEventListener('click', () => {
 // Contact form validation and feedback
 const contactForm = document.getElementById('contact-form');
 const feedback = document.getElementById('form-feedback');
-contactForm.addEventListener('submit', function(e) {
+contactForm.addEventListener('submit', async function(e) {
   e.preventDefault();
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
@@ -133,11 +133,28 @@ contactForm.addEventListener('submit', function(e) {
     feedback.style.display = 'block';
     return;
   }
-  feedback.textContent = 'Message sent!';
-  feedback.className = 'success';
+  feedback.textContent = 'Sending...';
+  feedback.className = '';
   feedback.style.display = 'block';
-  contactForm.reset();
-  setTimeout(() => { feedback.style.display = 'none'; }, 2500);
+  try {
+    const response = await fetch('https://formspree.io/f/xjkrpnkj', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(contactForm)
+    });
+    if (response.ok) {
+      feedback.textContent = 'Message sent successfully!';
+      feedback.className = 'success';
+      contactForm.reset();
+    } else {
+      feedback.textContent = 'There was an error sending your message. Please try again later.';
+      feedback.className = 'error';
+    }
+  } catch (error) {
+    feedback.textContent = 'There was an error sending your message. Please try again later.';
+    feedback.className = 'error';
+  }
+  setTimeout(() => { feedback.style.display = 'none'; }, 3500);
 });
 
 // Animate skill progress bars when in view
