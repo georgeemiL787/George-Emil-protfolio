@@ -133,7 +133,7 @@ contactForm.addEventListener('submit', function(e) {
     feedback.style.display = 'block';
     return;
   }
-  feedback.textContent = 'Message sent! (Demo only)';
+  feedback.textContent = 'Message sent!';
   feedback.className = 'success';
   feedback.style.display = 'block';
   contactForm.reset();
