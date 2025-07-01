@@ -218,6 +218,11 @@ document.querySelectorAll('.project-card').forEach(card => {
     projectTitle.textContent = card.getAttribute('data-title');
     projectDesc.textContent = card.getAttribute('data-description');
     projectLink.href = card.getAttribute('data-link');
+    if (card.getAttribute('data-link').endsWith('.pdf')) {
+      projectLink.setAttribute('target', '_blank');
+    } else {
+      projectLink.setAttribute('target', '_blank'); // keep default for other links
+    }
     projectModal.classList.add('show');
   });
 });
