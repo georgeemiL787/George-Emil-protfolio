@@ -3,6 +3,12 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #f7f9fb;
   color: #222;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure smooth transitions for all elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 header.hero {
   background: linear-gradient(120deg, #1e3c72, #2a5298);
@@ -56,6 +62,7 @@ section {
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(30,60,114,0.07);
   padding: 2rem;
+  border: 1px solid rgba(30,60,114,0.05);
 }
 h2 {
   color: #1e3c72;
@@ -288,6 +295,7 @@ section:hover {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  border: 1px solid rgba(30,60,114,0.08);
 }
 .skills-list li::before {
   content: '✔';
@@ -307,6 +315,7 @@ section:hover {
   box-shadow: 0 2px 16px rgba(30,60,114,0.07);
   padding: 1.5rem 1.2rem 1.2rem 1.2rem;
   margin-bottom: 0.5rem;
+  border: 1px solid rgba(30,60,114,0.05);
 }
 .skill-group h3 {
   font-size: 1.25rem;
@@ -341,6 +350,7 @@ section:hover {
   align-items: flex-start;
   transition: box-shadow 0.2s, transform 0.2s;
   min-width: 0;
+  border: 1px solid rgba(30,60,114,0.05);
 }
 .project-card:hover {
   box-shadow: 0 8px 32px rgba(30,60,114,0.13);
@@ -394,6 +404,7 @@ section:hover {
   max-width: 700px;
   margin: 2.5rem auto 0 auto;
   position: relative;
+  border: 1px solid rgba(30,60,114,0.05);
 }
 .contact-accent {
   width: 60px;
@@ -480,6 +491,7 @@ section:hover {
   flex-direction: column;
   align-items: flex-start;
   transition: box-shadow 0.2s, transform 0.2s;
+  border: 1px solid rgba(30,60,114,0.05);
 }
 .training-card:hover {
   box-shadow: 0 6px 32px rgba(30,60,114,0.13);
@@ -537,60 +549,236 @@ section:hover {
   opacity: 1;
 }
 
-/* Improved dark mode */
+/* Improved dark mode with consistent color palette */
 body.dark-mode {
-  background: #151922;
+  background: #0a0e17;
   color: #e3e6ee;
 }
+
 body.dark-mode header.hero {
-  background: linear-gradient(120deg, #1a2233, #2a5298);
+  background: linear-gradient(120deg, #0f141f, #1a2233);
   color: #fff;
 }
-body.dark-mode nav, body.dark-mode .main-nav {
-  background: #181c24;
-  box-shadow: 0 2px 8px rgba(30,60,114,0.18);
+
+body.dark-mode nav, 
+body.dark-mode .main-nav {
+  background: #0f141f;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
-body.dark-mode section, body.dark-mode .skill-group, body.dark-mode .project-card, body.dark-mode .training-card {
-  background: #20263a;
-  color: #e3e6ee;
+
+body.dark-mode nav ul li a {
+  color: #ffffff;
 }
+
+body.dark-mode nav ul li a:hover {
+  color: #6bb3ff;
+}
+
+body.dark-mode nav ul li a.active {
+  color: #ffffff;
+  background: linear-gradient(120deg, #1e3c72, #2a5298);
+  border-radius: 6px;
+  padding: 0.3rem 1rem;
+  box-shadow: 0 2px 8px rgba(30,60,114,0.10);
+}
+
+body.dark-mode section, 
+body.dark-mode .skill-group, 
+body.dark-mode .project-card, 
+body.dark-mode .training-card {
+  background: #1a1f2e;
+  color: #ffffff;
+  border: 1px solid #2a3a4a;
+}
+
 body.dark-mode .divider {
-  background: linear-gradient(90deg, #2a5298 0%, #4ea1f7 100%);
-  opacity: 0.18;
+  background: linear-gradient(90deg, #4ea1f7 0%, #2a5298 100%);
+  opacity: 0.3;
 }
-body.dark-mode .hero-btn, body.dark-mode .download-cv {
-  background: #232946;
-  color: #fff;
+
+body.dark-mode .hero-btn, 
+body.dark-mode .download-cv {
+  background: #2a3a4a;
+  color: #e3e6ee;
+  border: 1px solid #4ea1f7;
 }
-body.dark-mode .hero-btn:hover, body.dark-mode .download-cv:hover {
-  background: #2a5298;
-  color: #fff;
+
+body.dark-mode .hero-btn:hover, 
+body.dark-mode .download-cv:hover {
+  background: #4ea1f7;
+  color: #0a0e17;
+  border-color: #4ea1f7;
 }
+
 body.dark-mode .skills-list li {
-  background: #232946;
+  background: #2a3a4a;
+  color: #ffffff;
+  border: 1px solid #3a4a5a;
+}
+
+body.dark-mode .skills-list li::before {
   color: #4ea1f7;
 }
+
 body.dark-mode .contact-section-bg {
-  background: linear-gradient(135deg, #232946 0%, #181c24 100%);
+  background: linear-gradient(135deg, #1a1f2e 0%, #0f141f 100%);
+  border: 1px solid #2a3a4a;
 }
+
 body.dark-mode .contact-card {
-  background: rgba(30,60,114,0.85);
+  background: rgba(26,31,46,0.95);
+  border: 1px solid #2a3a4a;
 }
+
 body.dark-mode .contact-email {
-  background: linear-gradient(90deg, #232946 0%, #2a5298 100%);
-  color: #fff;
+  background: linear-gradient(90deg, #2a3a4a 0%, #4ea1f7 100%);
+  color: #e3e6ee;
+  border: 1px solid #4ea1f7;
 }
+
 body.dark-mode .contact-email:hover {
-  background: linear-gradient(90deg, #2a5298 0%, #232946 100%);
+  background: linear-gradient(90deg, #4ea1f7 0%, #2a3a4a 100%);
+  color: #0a0e17;
+}
+
+body.dark-mode input, 
+body.dark-mode textarea {
+  background: #2a3a4a;
+  color: #ffffff;
+  border: 1px solid #4ea1f7;
+}
+
+body.dark-mode input::placeholder, 
+body.dark-mode textarea::placeholder {
+  color: #8a9bb8;
+}
+
+body.dark-mode input:focus, 
+body.dark-mode textarea:focus {
+  border-color: #4ea1f7;
+  box-shadow: 0 0 0 2px rgba(78,161,247,0.2);
+}
+
+body.dark-mode form button {
+  background: #4ea1f7;
+  color: #0a0e17;
+  border: 1px solid #4ea1f7;
+}
+
+body.dark-mode form button:hover {
+  background: #2a5298;
+  color: #e3e6ee;
+  border-color: #2a5298;
+}
+
+body.dark-mode .contact-or-circle {
+  background: #2a3a4a;
+  color: #4ea1f7;
+  border: 1px solid #3a4a5a;
+}
+
+body.dark-mode .contact-info-simple .contact-label {
+  color: #4ea1f7;
+}
+
+body.dark-mode .contact-info-simple .contact-email {
+  background: linear-gradient(90deg, #2a3a4a 0%, #4ea1f7 100%);
+  color: #e3e6ee;
+  border: 1px solid #4ea1f7;
+}
+
+body.dark-mode .contact-info-simple .contact-email:hover {
+  background: linear-gradient(90deg, #4ea1f7 0%, #2a3a4a 100%);
+  color: #0a0e17;
+}
+
+body.dark-mode .cert-modal-content,
+body.dark-mode .project-modal-content {
+  background: #1a1f2e;
+  color: #e3e6ee;
+  border: 1px solid #2a3a4a;
+}
+
+body.dark-mode .cert-modal-close,
+body.dark-mode .project-modal-close {
+  color: #ffffff;
+}
+
+body.dark-mode .cert-modal-close:hover,
+body.dark-mode .project-modal-close:hover {
+  color: #6bb3ff;
+}
+
+body.dark-mode .training-link {
+  color: #ffffff;
+}
+
+body.dark-mode .training-link:hover {
+  color: #6bb3ff;
+}
+
+body.dark-mode .training-date {
+  color: #ffffff;
+}
+
+body.dark-mode .project-card a {
+  color: #ffffff;
+}
+
+body.dark-mode .project-card a:hover {
+  color: #6bb3ff;
+}
+
+body.dark-mode .project-card h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .project-card p {
+  color: #ffffff;
+}
+
+body.dark-mode .skill-group h3 {
+  color: #ffffff;
+}
+
+body.dark-mode h2 {
+  color: #ffffff;
+}
+
+body.dark-mode h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .main-title {
+  color: #ffffff;
+}
+
+body.dark-mode .subtitle {
   color: #e3e6ee;
 }
-body.dark-mode input, body.dark-mode textarea {
-  background: #232946;
-  color: #e3e6ee;
-  border: 1px solid #2a5298;
+
+body.dark-mode .hero-passion {
+  color: #ffffff;
 }
-body.dark-mode input::placeholder, body.dark-mode textarea::placeholder {
-  color: #b0b8d1;
+
+body.dark-mode .hero-email {
+  color: #ffffff;
+}
+
+body.dark-mode .contact-subtitle {
+  color: #ffffff;
+}
+
+body.dark-mode #form-feedback {
+  color: #ffffff;
+}
+
+body.dark-mode #form-feedback.error {
+  color: #ff6b6b;
+}
+
+body.dark-mode #form-feedback.success {
+  color: #51cf66;
 }
 
 /* Dark mode toggle button */
@@ -598,16 +786,36 @@ body.dark-mode input::placeholder, body.dark-mode textarea::placeholder {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  background: none;
-  border: none;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
   font-size: 1.7rem;
   cursor: pointer;
   color: #fff;
   z-index: 100;
-  transition: color 0.2s;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
+
 #dark-mode-toggle:hover {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.4);
+  transform: scale(1.1);
   color: #ffd700;
+}
+
+body.dark-mode #dark-mode-toggle {
+  background: rgba(78,161,247,0.1);
+  border-color: rgba(78,161,247,0.3);
+  color: #4ea1f7;
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+  background: rgba(78,161,247,0.2);
+  border-color: rgba(78,161,247,0.5);
+  color: #6bb3ff;
 }
 
 /* Contact form feedback */
@@ -784,42 +992,14 @@ body.dark-mode .contact-info-simple .contact-label {
   text-decoration: none;
 }
 
-/* Remove old contact-card styles if not used elsewhere */
-body.dark-mode, body.dark-mode section, body.dark-mode .skill-group, body.dark-mode .project-card, body.dark-mode .training-card {
-  color: #e3e6ee !important;
-}
-body.dark-mode p,
-body.dark-mode .hero-passion,
-body.dark-mode .contact-subtitle,
-body.dark-mode .project-card p,
-body.dark-mode .training-date,
-body.dark-mode .skills-list li,
-body.dark-mode .project-card a,
-body.dark-mode .project-card h3,
-body.dark-mode .contact-label {
-  color: #e3e6ee !important;
-}
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode .main-title,
-body.dark-mode .subtitle {
-  color: #4ea1f7 !important;
-}
-body.dark-mode .skills-list li::before {
-  color: #4ea1f7 !important;
-}
+/* Dark mode consistency ensured above */
 
 .training-logo {
   height: 32px;
-  width: auto;
+  width: 32px;
+  object-fit: contain;
   vertical-align: middle;
   margin-right: 0.7rem;
   margin-bottom: 0.2rem;
   display: inline-block;
-}
-
-<form action="https://formspree.io/f/xvgrvezr" method="POST">
-  <input type="email" name="email" required>
-  <textarea name="message" required></textarea>
-  <button type="submit">Send</button>
-</form> 
+} 
