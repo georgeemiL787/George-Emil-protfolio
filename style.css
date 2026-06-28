@@ -3,11 +3,13 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #f7f9fb;
   color: #222;
+  overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Ensure smooth transitions for all elements */
 * {
+  box-sizing: border-box;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 header.hero {
@@ -15,6 +17,11 @@ header.hero {
   color: #fff;
   text-align: center;
   padding: 3rem 1rem 2rem 1rem;
+}
+header.hero > * {
+  max-width: min(920px, 100%);
+  margin-left: auto;
+  margin-right: auto;
 }
 .profile-pic {
   width: 140px;
@@ -157,6 +164,11 @@ html {
   font-weight: 700;
   margin-bottom: 0.7rem;
   color: #fff;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+#typewriter {
+  display: inline;
 }
 .hero-desc {
   font-size: 1.1rem;
@@ -239,6 +251,7 @@ section:hover {
   font-size: 1.05rem;
   color: #e3e6ee;
   margin-bottom: 0.7rem;
+  line-height: 1.6;
 }
 .hero-email {
   color: #cfd8dc;
@@ -271,6 +284,10 @@ section:hover {
   transform: translateY(-2px) scale(1.04);
 }
 @media (max-width: 600px) {
+  header.hero {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
   .hero-buttons {
     flex-direction: column;
     gap: 0.7rem;
@@ -524,6 +541,13 @@ section:hover {
   font-weight: inherit;
   line-height: inherit;
   margin-left: 0.3ch;
+}
+@media (max-width: 600px) {
+  #typewriter {
+    display: block;
+    min-height: 1.5em;
+    margin-left: 0;
+  }
 }
 @keyframes blink-caret {
   0%, 100% { border-color: transparent; }
@@ -1002,4 +1026,4 @@ body.dark-mode .contact-info-simple .contact-label {
   margin-right: 0.7rem;
   margin-bottom: 0.2rem;
   display: inline-block;
-} 
+}

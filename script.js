@@ -45,7 +45,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Typewriter effect for subtitle
-const typewriterText = ["Autonomous Systems Developer", "AI Enthusiast", "Data Scientist", "Innovator"];
+const typewriterText = ["Applied AI Engineer", "Computer Vision Engineer", "ML Backend Builder", "Autonomous Perception Engineer"];
 const typewriterElem = document.getElementById('typewriter');
 let typeIdx = 0, charIdx = 0, isDeleting = false;
 function typeWriter() {
@@ -110,7 +110,7 @@ scrollBtn.addEventListener('click', () => {
 const darkToggle = document.getElementById('dark-mode-toggle');
 darkToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
-  darkToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+  darkToggle.textContent = document.body.classList.contains('dark-mode') ? 'Light' : 'Dark';
 });
 
 // Contact form validation and feedback
@@ -233,4 +233,4 @@ window.addEventListener('click', (e) => {
   if (e.target === projectModal) {
     projectModal.classList.remove('show');
   }
-}); 
+});
