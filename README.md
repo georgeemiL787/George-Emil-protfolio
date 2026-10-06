@@ -31,3 +31,13 @@ Projects include category filters, technology tags, and direct repository links.
 - MCV MVC architecture and development internship
 - Shell Eco-marathon autonomous perception
 - NTI data-analysis training (2024)
+
+## Frontend design
+
+The editorial design is inspired by [Superdesign's Bold Editorial Design Style](https://superdesign.dev/library?selected=bold-editorial-design-style&category=style), with an original navy/sage palette, large condensed headings, a live particle sphere, and SVG project diagrams. All 14 projects and the NTI Agentic AI training entry are retained.
+
+This remains a static HTML/CSS/JavaScript site suitable for GitHub Pages. No build step is required. Run `python -m http.server 8765` from this folder to preview it locally. Fonts load from Google Fonts, with local font fallbacks.
+
+Features include responsive project filters, a saved theme preference, native accessible project/certificate dialogs, reduced-motion support, and the existing Formspree contact form. Project artwork is illustrative, not a product screenshot.
+
+`motion.css` and `motion.js` add staggered headline entrances, a pointer-responsive particle network, orbiting rings, a continuous discipline marquee, scroll reveals, animated project filtering, artwork tilt and category-specific animation, and a rotating accent on the portrait. The canvas pauses outside the viewport and when the tab is hidden. The floating motion control saves a pause preference; the system reduced-motion setting disables movement automatically. Content remains available without JavaScript, with the original SVG sphere as a fallback.

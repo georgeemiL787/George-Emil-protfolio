@@ -3,217 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="George Emil Sadek - Computer Engineering graduate building deployable AI, computer vision, and machine learning systems.">
-  <title>George Emil Sadek | Applied AI & Computer Vision Engineer</title>
+  <meta name="description" content="George Emil Sadek — AI engineer building agents, computer vision systems, and useful applications. Explore 14 projects and my engineering journey.">
+  <meta name="theme-color" content="#111b20">
+  <title>George Emil Sadek — AI &amp; Computer Vision Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="motion.css">
 </head>
-<body>
-  <header class="hero">
-    <img src="Untitled.jpg" alt="George Emil Sadek" class="profile-pic">
-    <h1 class="main-title">George Emil Sadek</h1>
-    <h2 class="subtitle">Computer Engineering graduate and <span id="typewriter"></span></h2>
-    <p class="hero-passion">I build AI agents, computer vision systems, and the backends that turn models into usable applications.</p>
-    <p class="hero-email">georgeemil030@gmail.com</p>
-    <div class="hero-buttons">
-      <a href="https://github.com/georgeemiL787" class="hero-btn" target="_blank" rel="noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/george-emil-165a3127b/" class="hero-btn" target="_blank" rel="noreferrer">LinkedIn</a>
-    </div>
-    <button id="dark-mode-toggle" type="button" title="Switch to dark mode" aria-label="Switch to dark mode">Dark</button>
-  </header>
-
-  <nav class="main-nav">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Technical Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#training">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+<body class="dark-mode">
+  <a class="skip-link" href="#projects">Skip to projects</a>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a class="wordmark" href="#home" aria-label="George Emil, home">GE<span class="logo-dot">.</span><span class="wordmark-caption">GEORGE EMIL<br>AI ENGINEER</span></a>
+    <ul><li><a href="#projects">Work <span>14</span></a></li><li><a href="#about">About</a></li><li><a href="#skills">Toolkit</a></li><li><a href="#training">Journey</a></li><li><a href="#contact">Let’s talk ↗</a></li></ul>
+    <button id="dark-mode-toggle" type="button" title="Switch to light mode" aria-label="Switch to light mode">Light <span aria-hidden="true">◐</span></button>
   </nav>
+  <main>
+    <header class="hero wrap" id="home">
+      <div class="hero-topline"><span class="eyebrow">PORTFOLIO / GEORGE EMIL SADEK</span><span class="availability"><i></i> Open to opportunities</span></div>
+      <div class="hero-layout">
+        <div class="hero-copy"><p class="eyebrow hero-kicker">APPLIED AI · COMPUTER VISION · AGENTS</p><h1 aria-label="Human ideas. Machine intelligence."><span class="title-line" aria-hidden="true"><span>HUMAN IDEAS.</span></span><span class="title-line" aria-hidden="true"><span>MACHINE</span></span><span class="title-line title-outline" aria-hidden="true"><span>INTELLIGENCE.</span></span></h1><div class="hero-bottom"><p>I turn complex problems into AI systems people can actually use. From the first experiment to the application.</p><a class="round-link" href="#projects" aria-label="Explore selected projects">↘</a></div></div>
+        <div class="hero-visual" aria-hidden="true"><canvas class="neural-canvas"></canvas><div class="orbit-ring ring-one"></div><div class="orbit-ring ring-two"></div><span class="neural-tag tag-input">01 / CURIOSITY</span><span class="neural-tag tag-output">02 / POSSIBILITY ↗</span><div class="orbital-label"><span>FIG. 01</span><span>THINK → BUILD → ITERATE</span></div><svg class="intelligence-orb" viewBox="0 0 400 400"><ellipse cx="200" cy="200" rx="22" ry="158"/><ellipse cx="200" cy="200" rx="39" ry="158"/><ellipse cx="200" cy="200" rx="56" ry="158"/><ellipse cx="200" cy="200" rx="73" ry="158"/><ellipse cx="200" cy="200" rx="90" ry="158"/><ellipse cx="200" cy="200" rx="107" ry="158"/><ellipse cx="200" cy="200" rx="124" ry="158"/><ellipse cx="200" cy="200" rx="141" ry="158"/><ellipse cx="200" cy="200" rx="158" ry="158"/><ellipse cx="200" cy="80" rx="102.8" ry="8.0"/><ellipse cx="200" cy="110" rx="129.9" ry="14.0"/><ellipse cx="200" cy="140" rx="146.2" ry="20.0"/><ellipse cx="200" cy="170" rx="155.1" ry="26.0"/><ellipse cx="200" cy="200" rx="158.0" ry="32.0"/><ellipse cx="200" cy="230" rx="155.1" ry="26.0"/><ellipse cx="200" cy="260" rx="146.2" ry="20.0"/><ellipse cx="200" cy="290" rx="129.9" ry="14.0"/><ellipse cx="200" cy="320" rx="102.8" ry="8.0"/><circle class="orb-dot" cx="200" cy="42" r="7"/><circle class="orb-dot" cx="358" cy="200" r="5"/></svg><div class="orbit-axis">+</div></div>
+      </div>
+      <div class="hero-footer"><span>COMPUTER ENGINEERING / BENHA UNIVERSITY</span><div><a href="https://github.com/georgeemiL787" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/george-emil-165a3127b/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div><span>SCROLL TO EXPLORE ↓</span></div>
+    </header>
+    <div class="discipline-strip" aria-hidden="true"><div class="marquee-track"><div class="marquee-group"><span>ARTIFICIAL INTELLIGENCE</span><b>✳</b><span>COMPUTER VISION</span><b>✳</b><span>IDEAS INTO APPLICATIONS</span><b>✳</b><span>AGENTIC SYSTEMS</span><b>✳</b></div><div class="marquee-group"><span>ARTIFICIAL INTELLIGENCE</span><b>✳</b><span>COMPUTER VISION</span><b>✳</b><span>IDEAS INTO APPLICATIONS</span><b>✳</b><span>AGENTIC SYSTEMS</span><b>✳</b></div></div></div>
+    <section id="projects" class="section-block wrap">
+      <div class="section-heading"><div><p class="eyebrow">01 / SELECTED WORK</p><h2>BUILT TO<br><span class="serif-word">do something.</span></h2></div><p class="section-intro">Research that becomes a tool. Models that become applications. A collection of things I’ve built, explored, and learned from.</p></div>
+      <div class="projects-toolbar"><div class="project-filters" role="group" aria-label="Filter projects" hidden><button type="button" data-filter="all" aria-pressed="true" aria-controls="project-grid">All work</button><button type="button" data-filter="agents" aria-pressed="false" aria-controls="project-grid">AI agents</button><button type="button" data-filter="vision" aria-pressed="false" aria-controls="project-grid">Computer vision</button><button type="button" data-filter="web" aria-pressed="false" aria-controls="project-grid">Connected &amp; web</button><button type="button" data-filter="data" aria-pressed="false" aria-controls="project-grid">Data &amp; ML</button></div><p id="project-count" role="status" aria-live="polite">14 projects</p></div>
+      <div id="project-grid" class="projects-list">
+      <article class="project-card featured" data-category="agents" data-title="Research Agent" data-description="A LangGraph workflow that plans research, gathers web evidence, drafts cited reports, and reviews them within configurable search and revision budgets. FastAPI streams progress to a React interface; SQLite keeps job history and reports export as Markdown or JSON. Inference runs locally with Ollama, while web searches use the internet." data-link="https://github.com/georgeemiL787/research-agent-langgraph">
+        <div class="project-art art-agents" aria-hidden="true"><span class="art-index">EXPERIMENT / 01</span><svg viewBox="0 0 400 220"><path d="M80 90H180M220 90H320M200 110V155"/><circle cx="60" cy="90" r="22"/><circle cx="200" cy="90" r="25"/><circle cx="340" cy="90" r="22"/><circle cx="200" cy="174" r="16"/><path d="m50 90 8 8 14-17m135-2-10 11 10 11m-12-11h17m121-8v16m-8-8h16"/><text x="60" y="45">PLAN</text><text x="200" y="45">REASON</text><text x="340" y="45">BUILD</text></svg><span class="art-caption">AGENT WORKFLOW</span><span class="art-cross">+</span></div>
+        <div class="project-body"><span class="project-category">AI agents &amp; research</span><h3>Research Agent</h3><p>A local-model research assistant that plans searches, gathers evidence, writes cited reports, and reviews its drafts. Includes live progress, saved research history, and report exports.</p><ul class="project-stack" aria-label="Technologies"><li>LangGraph</li><li>Ollama</li><li>FastAPI</li><li>React</li></ul>
+        <div class="project-actions"><button type="button" class="project-details" aria-label="Read about Research Agent">Project details <span aria-hidden="true">+</span></button><a class="project-source" href="https://github.com/georgeemiL787/research-agent-langgraph" target="_blank" rel="noreferrer" aria-label="View Research Agent on GitHub">GitHub <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      <article class="project-card featured" data-category="web" data-title="REHELPER" data-description="A tele-rehabilitation platform connecting ESP32 smart-glove sensor data with patient and therapist workflows. The backend includes role-based access, exercise plans, session records, a model-inference pipeline, and WebSocket progress updates, using FastAPI and PostgreSQL." data-link="https://github.com/georgeemiL787/ReHelper">
+        <div class="project-art art-web" aria-hidden="true"><span class="art-index">EXPERIMENT / 02</span><svg viewBox="0 0 400 220"><rect x="75" y="50" width="250" height="130" rx="8"/><path d="M75 76h250M90 64h4m8 0h4m8 0h4M105 111h72m-72 17h51m-51 17h63"/><rect x="206" y="95" width="92" height="61" rx="5"/><path d="m220 130 14-17 16 24 12-12 23 10"/></svg><span class="art-caption">CONNECTED SYSTEM</span><span class="art-cross">+</span></div>
+        <div class="project-body"><span class="project-category">Connected health &amp; backend engineering</span><h3>REHELPER</h3><p>A tele-rehabilitation platform connecting smart-glove sensor data with patient sessions and therapist workflows. Includes exercise plans, progress tracking, and an inference pipeline.</p><ul class="project-stack" aria-label="Technologies"><li>FastAPI</li><li>PostgreSQL</li><li>ESP32</li><li>WebSockets</li></ul>
+        <div class="project-actions"><button type="button" class="project-details" aria-label="Read about REHELPER">Project details <span aria-hidden="true">+</span></button><a class="project-source" href="https://github.com/georgeemiL787/ReHelper" target="_blank" rel="noreferrer" aria-label="View REHELPER on GitHub">GitHub <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      <article class="project-card" data-category="agents" data-title="Catherine — AI Study Partner" data-description="A study companion that turns captured learning material into contextual answers, summaries, flashcards, and quizzes. Combines OCR, speech processing, and semantic retrieval." data-link="https://github.com/georgeemiL787/Cath_ai_study_partner">
+        <div class="project-art art-agents" aria-hidden="true"><span class="art-index">EXPERIMENT / 03</span><svg viewBox="0 0 400 220"><path d="M80 90H180M220 90H320M200 110V155"/><circle cx="60" cy="90" r="22"/><circle cx="200" cy="90" r="25"/><circle cx="340" cy="90" r="22"/><circle cx="200" cy="174" r="16"/><path d="m50 90 8 8 14-17m135-2-10 11 10 11m-12-11h17m121-8v16m-8-8h16"/><text x="60" y="45">PLAN</text><text x="200" y="45">REASON</text><text x="340" y="45">BUILD</text></svg><span class="art-caption">AGENT WORKFLOW</span><span class="art-cross">+</span></div>
+        <div class="project-body"><span class="project-category">Multimodal AI &amp; learning</span><h3>Catherine — AI Study Partner</h3><p>A study companion that turns captured learning material into contextual answers, summaries, flashcards, and quizzes. Combines OCR, speech processing, and semantic retrieval.</p><ul class="project-stack" aria-label="Technologies"><li>FastAPI</li><li>React</li><li>OCR</li><li>RAG</li></ul>
+        <div class="project-actions"><button type="button" class="project-details" aria-label="Read about Catherine — AI Study Partner">Project details <span aria-hidden="true">+</span></button><a class="project-source" href="https://github.com/georgeemiL787/Cath_ai_study_partner" target="_blank" rel="noreferrer" aria-label="View Catherine — AI Study Partner on GitHub">GitHub <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      <article class="project-card" data-category="agents" data-title="George Job Agent" data-description="Local-first Windows desktop system that finds, scores, tailors, and tracks AI/ML job opportunities." data-link="https://github.com/georgeemiL787/George_job_agent">
+        <div class="project-art art-agents" aria-hidden="true"><span class="art-index">EXPERIMENT / 04</span><svg viewBox="0 0 400 220"><path d="M80 90H180M220 90H320M200 110V155"/><circle cx="60" cy="90" r="22"/><circle cx="200" cy="90" r="25"/><circle cx="340" cy="90" r="22"/><circle cx="200" cy="174" r="16"/><path d="m50 90 8 8 14-17m135-2-10 11 10 11m-12-11h17m121-8v16m-8-8h16"/><text x="60" y="45">PLAN</text><text x="200" y="45">REASON</text><text x="340" y="45">BUILD</text></svg><span class="art-caption">AGENT WORKFLOW</span><span class="art-cross">+</span></div>
+        <div class="project-body"><span class="project-category">Desktop automation &amp; applied AI</span><h3>George Job Agent</h3><p>A Windows desktop assistant that collects and scores job opportunities, tailors CVs and cover letters, and tracks applications locally. Includes scheduling, run reports, and packaged desktop builds.</p><ul class="project-stack" aria-label="Technologies"><li>Python</li><li>PySide6</li><li>SQLite</li><li>LLMs</li></ul>
+        <div class="project-actions"><button type="button" class="project-details" aria-label="Read about George Job Agent">Project details <span aria-hidden="true">+</span></button><a class="project-source" href="https://github.com/georgeemiL787/George_job_agent" target="_blank" rel="noreferrer" aria-label="View George Job Agent on GitHub">GitHub <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      <article class="project-card" data-category="vision" data-title="Cellula Computer Vision Internship" data-description="Eight-task portfolio covering dental classification, multispectral segmentation, deployment APIs, video understanding, data cleaning, Grad-CAM, and a Django inference demo." data-link="https://github.com/georgeemiL787/Cellula_Computer_Vision_Internship">
+        <div class="project-art art-vision" aria-hidden="true"><span class="art-index">EXPERIMENT / 05</span><svg viewBox="0 0 400 220"><path d="M100 80V45h40m120 0h40v35m0 70v35h-40m-120 0h-40v-35"/><circle cx="200" cy="115" r="54"/><ellipse cx="200" cy="115" rx="25" ry="54"/><path d="M146 115h108M200 61v108m-46-80h92m-92 52h92"/><circle cx="200" cy="115" r="8"/></svg><span class="art-caption">VISION PIPELINE</span><span class="art-cross">+</span></div>
+        <div class="project-body"><span class="project-category">Computer vision &amp; model deployment</span><h3>Cellula Computer Vision Internship</h3><p>Eight tasks spanning dental-image classification, multispectral water segmentation, and surveillance-video analysis, with explainability, model evaluation, and inference APIs.</p><ul class="project-stack" aria-label="Technologies"><li>PyTorch</li><li>TensorFlow</li><li>FastAPI</li><li>Django</li></ul>
+        <div class="project-actions"><button type="button" class="project-details" aria-label="Read about Cellula Computer Vision Internship">Project details <span aria-hidden="true">+</span></button><a class="project-source" href="https://github.com/georgeemiL787/Cellula_Computer_Vision_Internship" target="_blank" rel="noreferrer" aria-label="View Cellula Computer Vision Internship on GitHub">GitHub <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      <article class="project-card" data-category="vision" data-title="MTC-AIC4 Aerial Tracking" data-description="Reproducible competition package for efficient aerial single-object tracking with SiamAPN integration, cached reconstruction, validation reports, and deterministic submission hashes." data-link="https://github.com/georgeemiL787/MTC-AIC">
+        <div class="project-art art-vision" aria-hidden="true"><span class="art-index">EXPERIMENT / 06</span><svg viewBox="0 0 400 220"><path d="M100 80V45h40m120 0h40v35m0 70v35h-40m-120 0h-40v-35"/><circle cx="200" cy="115" r="54"/><ellipse cx="200" cy="115" rx="25" ry="54"/><path d="M146 115h108M200 61v108m-46-80h92m-92 52h92"/><circle cx="200" cy="115" r="8"/></svg><span class="art-caption">VISION PIPELINE</span><span class="art-cross">+</span></div>
+        <div class="project-body"><span class="project-category">Aerial tracking &amp; reproducible ML</span><h3>MTC-AIC4 Aerial Tracking</h3><p>Created a competition-ready reproduction pipeline around SiamAPN with CUDA inference, sequence routing, checkpoint verification, cached rebuilds, validation reports, and exact submission hashes.</p><ul class="project-stack" aria-label="Technologies"><li>SiamAPN</li><li>CUDA</li><li>Python</li></ul>
+        <div class="project-actions"><button type="button" class="project-details" aria-label="Read about MTC-AIC4 Aerial Tracking">Project details <span aria-hidden="true">+</span></button><a class="project-source" href="https://github.com/georgeemiL787/MTC-AIC" target="_blank" rel="noreferrer" aria-label="View MTC-AIC4 Aerial Tracking on GitHub">GitHub <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      <article class="project-card" data-category="web" data-title="NailedIT Healthcare Platform" data-description="Multi-role Node, Express, and MySQL healthcare platform with AI-assisted nail-image triage." data-link="https://github.com/georgeemiL787/software_project">
+        <div class="project-art art-web" aria-hidden="true"><span class="art-index">EXPERIMENT / 07</span><svg viewBox="0 0 400 220"><rect x="75" y="50" width="250" height="130" rx="8"/><path d="M75 76h250M90 64h4m8 0h4m8 0h4M105 111h72m-72 17h51m-51 17h63"/><rect x="206" y="95" width="92" height="61" rx="5"/><path d="m220 130 14-17 16 24 12-12 23 10"/></svg><span class="art-caption">CONNECTED SYSTEM</span><span class="art-cross">+</span></div>
+        <div class="project-body"><span class="project-category">Healthcare &amp; full-stack development</span><h3>NailedIT Healthcare Platform</h3><p>A multi-role healthcare application with appointments, image uploads, notifications, and review queues. Supports optional TensorFlow.js inference for nail-image triage.</p><ul class="project-stack" aria-label="Technologies"><li>Node.js</li><li>Express</li><li>MySQL</li><li>TensorFlow.js</li></ul>
+        <div class="project-actions"><button type="button" class="project-details" aria-label="Read about NailedIT Healthcare Platform">Project details <span aria-hidden="true">+</span></button><a class="project-source" href="https://github.com/georgeemiL787/software_project" target="_blank" rel="noreferrer" aria-label="View NailedIT Healthcare Platform on GitHub">GitHub <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      <article class="project-card" data-category="web" data-title="Learning Management System" data-description="Collaborative ASP.NET Core MVC platform with Identity, role-based workflows, course management, approvals, and dashboards." data-link="https://github.com/georgeemiL787/Mcv_capstone_project">
+        <div class="project-art art-web" aria-hidden="true"><span class="art-index">EXPERIMENT / 08</span><svg viewBox="0 0 400 220"><rect x="75" y="50" width="250" height="130" rx="8"/><path d="M75 76h250M90 64h4m8 0h4m8 0h4M105 111h72m-72 17h51m-51 17h63"/><rect x="206" y="95" width="92" height="61" rx="5"/><path d="m220 130 14-17 16 24 12-12 23 10"/></svg><span class="art-caption">CONNECTED SYSTEM</span><span class="art-cross">+</span></div>
+        <div class="project-body"><span class="project-category">Team project &amp; web engineering</span><h3>Learning Management System</h3><p>Contributed to an ASP.NET Core MVC platform with Identity, student/instructor/admin roles, course publishing and approval, dashboards, profiles, account security, and Entity Framework persistence.</p><ul class="project-stack" aria-label="Technologies"><li>ASP.NET Core</li><li>C#</li><li>Entity Framework</li></ul>
+        <div class="project-actions"><button type="button" class="project-details" aria-label="Read about Learning Management System">Project details <span aria-hidden="true">+</span></button><a class="project-source" href="https://github.com/georgeemiL787/Mcv_capstone_project" target="_blank" rel="noreferrer" aria-label="View Learning Management System on GitHub">GitHub <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      <article class="project-card" data-category="vision" data-title="Paper Piano with Computer Vision" data-description="Real-time OpenCV application that detects a drawn keyboard and finger touches to trigger piano notes." data-link="https://github.com/georgeemiL787/piano_with_computer_vision">
+        <div class="project-art art-vision" aria-hidden="true"><span class="art-index">EXPERIMENT / 09</span><svg viewBox="0 0 400 220"><path d="M100 80V45h40m120 0h40v35m0 70v35h-40m-120 0h-40v-35"/><circle cx="200" cy="115" r="54"/><ellipse cx="200" cy="115" rx="25" ry="54"/><path d="M146 115h108M200 61v108m-46-80h92m-92 52h92"/><circle cx="200" cy="115" r="8"/></svg><span class="art-caption">VISION PIPELINE</span><span class="art-cross">+</span></div>
+        <div class="project-body"><span class="project-category">Interactive computer vision</span><h3>Paper Piano with Computer Vision</h3><p>Created a real-time webcam application that detects a hand-drawn piano, calibrates key points, validates finger touches, and maps interactions to audio playback.</p><ul class="project-stack" aria-label="Technologies"><li>Python</li><li>OpenCV</li><li>Real-time vision</li></ul>
+        <div class="project-actions"><button type="button" class="project-details" aria-label="Read about Paper Piano with Computer Vision">Project details <span aria-hidden="true">+</span></button><a class="project-source" href="https://github.com/georgeemiL787/piano_with_computer_vision" target="_blank" rel="noreferrer" aria-label="View Paper Piano with Computer Vision on GitHub">GitHub <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      <article class="project-card" data-category="vision" data-title="Face Mask Detection" data-description="Image and webcam mask detection with MobileNetV2 and ResNet50V2 models, training scripts, a web interface, and ONNX export." data-link="https://github.com/georgeemiL787/Face_mask_detection">
+        <div class="project-art art-vision" aria-hidden="true"><span class="art-index">EXPERIMENT / 10</span><svg viewBox="0 0 400 220"><path d="M100 80V45h40m120 0h40v35m0 70v35h-40m-120 0h-40v-35"/><circle cx="200" cy="115" r="54"/><ellipse cx="200" cy="115" rx="25" ry="54"/><path d="M146 115h108M200 61v108m-46-80h92m-92 52h92"/><circle cx="200" cy="115" r="8"/></svg><span class="art-caption">VISION PIPELINE</span><span class="art-cross">+</span></div>
+        <div class="project-body"><span class="project-category">Computer vision &amp; transfer learning</span><h3>Face Mask Detection</h3><p>Image and webcam mask detection with MobileNetV2 and ResNet50V2 models, training scripts, a web interface, and ONNX export.</p><ul class="project-stack" aria-label="Technologies"><li>TensorFlow</li><li>Keras</li><li>MobileNetV2</li><li>ONNX</li></ul>
+        <div class="project-actions"><button type="button" class="project-details" aria-label="Read about Face Mask Detection">Project details <span aria-hidden="true">+</span></button><a class="project-source" href="https://github.com/georgeemiL787/Face_mask_detection" target="_blank" rel="noreferrer" aria-label="View Face Mask Detection on GitHub">GitHub <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      <article class="project-card" data-category="vision" data-title="ASL Sign Recognition" data-description="A webcam application that recognizes American Sign Language alphabet hand signs and displays text. Includes a PyTorch model, dataset utilities, and training and prediction scripts." data-link="https://github.com/georgeemiL787/Arabic_letters_in_sign_language">
+        <div class="project-art art-vision" aria-hidden="true"><span class="art-index">EXPERIMENT / 11</span><svg viewBox="0 0 400 220"><path d="M100 80V45h40m120 0h40v35m0 70v35h-40m-120 0h-40v-35"/><circle cx="200" cy="115" r="54"/><ellipse cx="200" cy="115" rx="25" ry="54"/><path d="M146 115h108M200 61v108m-46-80h92m-92 52h92"/><circle cx="200" cy="115" r="8"/></svg><span class="art-caption">VISION PIPELINE</span><span class="art-cross">+</span></div>
+        <div class="project-body"><span class="project-category">Real-time vision &amp; accessibility</span><h3>ASL Sign Recognition</h3><p>A webcam application that recognizes American Sign Language alphabet hand signs and displays text. Includes a PyTorch model, dataset utilities, and training and prediction scripts.</p><ul class="project-stack" aria-label="Technologies"><li>PyTorch</li><li>OpenCV</li><li>Python</li></ul>
+        <div class="project-actions"><button type="button" class="project-details" aria-label="Read about ASL Sign Recognition">Project details <span aria-hidden="true">+</span></button><a class="project-source" href="https://github.com/georgeemiL787/Arabic_letters_in_sign_language" target="_blank" rel="noreferrer" aria-label="View ASL Sign Recognition on GitHub">GitHub <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      <article class="project-card" data-category="data" data-title="Email Spam Detection" data-description="A text-classification notebook covering message cleaning, word-count features, Naive Bayes training, and evaluation with precision, recall, and F1." data-link="https://github.com/georgeemiL787/Email_Spam_Detection">
+        <div class="project-art art-data" aria-hidden="true"><span class="art-index">EXPERIMENT / 12</span><svg viewBox="0 0 400 220"><path d="M80 40v145h250M100 165l53-36 42 10 48-60 62 15"/><rect x="105" y="126" width="25" height="58"/><rect x="157" y="99" width="25" height="85"/><rect x="209" y="75" width="25" height="109"/><rect x="261" y="48" width="25" height="136"/></svg><span class="art-caption">DATA EXPLORATION</span><span class="art-cross">+</span></div>
+        <div class="project-body"><span class="project-category">Natural language processing &amp; ML</span><h3>Email Spam Detection</h3><p>A text-classification notebook covering message cleaning, word-count features, Naive Bayes training, and evaluation with precision, recall, and F1.</p><ul class="project-stack" aria-label="Technologies"><li>scikit-learn</li><li>Naive Bayes</li><li>Pandas</li><li>NLP</li></ul>
+        <div class="project-actions"><button type="button" class="project-details" aria-label="Read about Email Spam Detection">Project details <span aria-hidden="true">+</span></button><a class="project-source" href="https://github.com/georgeemiL787/Email_Spam_Detection" target="_blank" rel="noreferrer" aria-label="View Email Spam Detection on GitHub">GitHub <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      <article class="project-card" data-category="data" data-title="Supermarket Sales Analysis" data-description="Sales-data cleaning and analysis across three supermarket branches, with Power BI reports and documented insights into customer behavior, product categories, and sales trends." data-link="https://github.com/georgeemiL787/Supermarket_Sales_predictions_and_Data_Analysis">
+        <div class="project-art art-data" aria-hidden="true"><span class="art-index">EXPERIMENT / 13</span><svg viewBox="0 0 400 220"><path d="M80 40v145h250M100 165l53-36 42 10 48-60 62 15"/><rect x="105" y="126" width="25" height="58"/><rect x="157" y="99" width="25" height="85"/><rect x="209" y="75" width="25" height="109"/><rect x="261" y="48" width="25" height="136"/></svg><span class="art-caption">DATA EXPLORATION</span><span class="art-cross">+</span></div>
+        <div class="project-body"><span class="project-category">Data analysis &amp; business intelligence</span><h3>Supermarket Sales Analysis</h3><p>Sales-data cleaning and analysis across three supermarket branches, with Power BI reports and documented insights into customer behavior, product categories, and sales trends.</p><ul class="project-stack" aria-label="Technologies"><li>Python</li><li>Power BI</li><li>Excel</li></ul>
+        <div class="project-actions"><button type="button" class="project-details" aria-label="Read about Supermarket Sales Analysis">Project details <span aria-hidden="true">+</span></button><a class="project-source" href="https://github.com/georgeemiL787/Supermarket_Sales_predictions_and_Data_Analysis" target="_blank" rel="noreferrer" aria-label="View Supermarket Sales Analysis on GitHub">GitHub <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      <article class="project-card" data-category="data" data-title="IMDb Movie Analysis" data-description="An Excel analysis of movie ratings, genres, directors, and financial data using cleaned records, derived columns, pivot tables, and visualizations." data-link="https://github.com/georgeemiL787/IMDB_MOVIES_DATASET_ANALYSIS">
+        <div class="project-art art-data" aria-hidden="true"><span class="art-index">EXPERIMENT / 14</span><svg viewBox="0 0 400 220"><path d="M80 40v145h250M100 165l53-36 42 10 48-60 62 15"/><rect x="105" y="126" width="25" height="58"/><rect x="157" y="99" width="25" height="85"/><rect x="209" y="75" width="25" height="109"/><rect x="261" y="48" width="25" height="136"/></svg><span class="art-caption">DATA EXPLORATION</span><span class="art-cross">+</span></div>
+        <div class="project-body"><span class="project-category">Exploratory analysis &amp; visualization</span><h3>IMDb Movie Analysis</h3><p>An Excel analysis of movie ratings, genres, directors, and financial data using cleaned records, derived columns, pivot tables, and visualizations.</p><ul class="project-stack" aria-label="Technologies"><li>Excel</li><li>Pivot tables</li><li>Data cleaning</li></ul>
+        <div class="project-actions"><button type="button" class="project-details" aria-label="Read about IMDb Movie Analysis">Project details <span aria-hidden="true">+</span></button><a class="project-source" href="https://github.com/georgeemiL787/IMDB_MOVIES_DATASET_ANALYSIS" target="_blank" rel="noreferrer" aria-label="View IMDb Movie Analysis on GitHub">GitHub <span aria-hidden="true">↗</span></a></div></div>
+      </article>
+      </div>
+      <a class="github-more" href="https://github.com/georgeemiL787?tab=repositories" target="_blank" rel="noreferrer">THERE’S MORE ON GITHUB <span>↗</span></a>
+    </section>
+    <section id="about" class="section-block about-section wrap">
+      <div class="portrait-frame"><img src="assets/george-emil.jpg" alt="George Emil Sadek" loading="lazy" width="3712" height="5568"><span class="portrait-tag">THE HUMAN BEHIND THE MODELS ↗</span></div>
+      <div class="about-copy"><p class="eyebrow">02 / A LITTLE ABOUT ME</p><h2>CURIOUS BY NATURE.<br><span class="serif-word">Engineer by training.</span></h2>
 
-  <div class="divider"></div>
-  <section id="about" class="fade-in-section section-block">
-    <h2>About Me</h2>
     <p>I am a Computer Engineering graduate from the Faculty of Engineering at Shoubra, Benha University. My strongest work sits where machine learning meets practical engineering: training and evaluating models, exposing inference through APIs, packaging services with Docker, and building interfaces that make AI systems usable.</p>
     <p>My recent work includes a local AI research agent, a sensor-connected rehabilitation platform, and a desktop job-search assistant. My computer vision work spans medical-image classification, water segmentation, surveillance video, aerial tracking, and autonomous perception.</p>
-  </section>
-
-  <div class="divider"></div>
-  <section id="skills" class="fade-in-section section-block">
-    <h2>Technical Skills</h2>
-    <div class="skills-grid">
+        <div class="about-note"><span>MY APPROACH</span><p>Understand the problem.<br>Build it. Test it. Make it useful.</p></div>
+      </div>
+    </section>
+    <section id="skills" class="section-block wrap"><div class="section-heading"><div><p class="eyebrow">03 / THE TOOLKIT</p><h2>TOOLS FOR<br><span class="serif-word">making it happen.</span></h2></div><p class="section-intro">A practical mix of machine learning, software engineering, and the systems that connect them.</p></div><div class="skills-grid">
       <div class="skill-group"><h3>Languages</h3><ul class="skills-list"><li>Python</li><li>SQL</li><li>C++</li><li>JavaScript</li><li>C#</li></ul></div>
       <div class="skill-group"><h3>Machine Learning & Vision</h3><ul class="skills-list"><li>PyTorch</li><li>TensorFlow / Keras</li><li>scikit-learn</li><li>OpenCV</li><li>Image Segmentation</li><li>Video Classification</li><li>Object Tracking</li><li>Model Evaluation</li><li>LangGraph</li><li>Ollama</li><li>RAG</li></ul></div>
       <div class="skill-group"><h3>Backend & Deployment</h3><ul class="skills-list"><li>FastAPI</li><li>Flask</li><li>Django</li><li>Express</li><li>ASP.NET Core</li><li>REST APIs</li><li>MCP</li><li>Docker</li></ul></div>
       <div class="skill-group"><h3>Data & Databases</h3><ul class="skills-list"><li>Pandas</li><li>NumPy</li><li>MySQL</li><li>SQL Server</li><li>PostgreSQL</li><li>SQLite</li><li>Power BI</li></ul></div>
       <div class="skill-group"><h3>Autonomous Systems</h3><ul class="skills-list"><li>ROS 1 / ROS 2</li><li>CARLA</li><li>Camera-LiDAR Fusion</li><li>Perception Pipelines</li><li>Single-Object Tracking</li></ul></div>
-      <div class="skill-group"><h3>Engineering Tools</h3><ul class="skills-list"><li>Git</li><li>Linux</li><li>CI/CD</li><li>Jupyter / Colab</li><li>Proteus</li><li>PCB Design</li></ul></div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-  <section id="projects" class="fade-in-section section-block">
-    <h2>Selected Projects</h2>
-    <p class="section-intro">Projects across AI agents, computer vision, connected applications, and data analysis. Explore the code and implementation details for each project.</p>
-    <div class="project-filters" role="group" aria-label="Filter projects" hidden>
-      <button type="button" data-filter="all" aria-pressed="true" aria-controls="project-grid">All projects</button>
-      <button type="button" data-filter="agents" aria-pressed="false" aria-controls="project-grid">AI agents</button>
-      <button type="button" data-filter="vision" aria-pressed="false" aria-controls="project-grid">Computer vision</button>
-      <button type="button" data-filter="web" aria-pressed="false" aria-controls="project-grid">Connected &amp; web apps</button>
-      <button type="button" data-filter="data" aria-pressed="false" aria-controls="project-grid">Data &amp; ML</button>
-    </div>
-    <p id="project-count" class="project-count" role="status" aria-live="polite">14 projects</p>
-    <div id="project-grid" class="projects-list">
-      <div class="project-card" data-category="agents" data-title="Research Agent" data-description="A LangGraph workflow that plans research, gathers web evidence, drafts cited reports, and reviews them within configurable search and revision budgets. FastAPI streams progress to a React interface; SQLite keeps job history and reports export as Markdown or JSON. Inference runs locally with Ollama, while web searches use the internet." data-link="https://github.com/georgeemiL787/research-agent-langgraph">
-        <span class="project-category">AI agents &amp; research</span>
-        <h3><a href="https://github.com/georgeemiL787/research-agent-langgraph" target="_blank" rel="noreferrer">Research Agent</a></h3>
-        <p>A local-model research assistant that plans searches, gathers evidence, writes cited reports, and reviews its drafts. Includes live progress, saved research history, and report exports.</p>
-        <ul class="project-stack" aria-label="Technologies"><li>LangGraph</li><li>Ollama</li><li>FastAPI</li><li>React</li></ul>
-        <a class="project-source" href="https://github.com/georgeemiL787/research-agent-langgraph" target="_blank" rel="noreferrer" aria-label="Explore Research Agent on GitHub">Explore repository <span aria-hidden="true">&nearr;</span></a>
-      </div>
-      <div class="project-card" data-category="web" data-title="REHELPER" data-description="A tele-rehabilitation platform connecting ESP32 smart-glove sensor data with patient and therapist workflows. The backend includes role-based access, exercise plans, session records, a model-inference pipeline, and WebSocket progress updates, using FastAPI and PostgreSQL." data-link="https://github.com/georgeemiL787/ReHelper">
-        <span class="project-category">Connected health &amp; backend engineering</span>
-        <h3><a href="https://github.com/georgeemiL787/ReHelper" target="_blank" rel="noreferrer">REHELPER</a></h3>
-        <p>A tele-rehabilitation platform connecting smart-glove sensor data with patient sessions and therapist workflows. Includes exercise plans, progress tracking, and an inference pipeline.</p>
-        <ul class="project-stack" aria-label="Technologies"><li>FastAPI</li><li>PostgreSQL</li><li>ESP32</li><li>WebSockets</li></ul>
-        <a class="project-source" href="https://github.com/georgeemiL787/ReHelper" target="_blank" rel="noreferrer" aria-label="Explore REHELPER on GitHub">Explore repository <span aria-hidden="true">&nearr;</span></a>
-      </div>
-      <div class="project-card" data-category="vision" data-title="Cellula Computer Vision Internship" data-description="Eight-task portfolio covering dental classification, multispectral segmentation, deployment APIs, video understanding, data cleaning, Grad-CAM, and a Django inference demo." data-link="https://github.com/georgeemiL787/Cellula_Computer_Vision_Internship">
-        <span class="project-category">Computer vision &amp; model deployment</span>
-        <h3><a href="https://github.com/georgeemiL787/Cellula_Computer_Vision_Internship" target="_blank" rel="noreferrer">Cellula Computer Vision Internship</a></h3>
-        <p>Eight tasks spanning dental-image classification, multispectral water segmentation, and surveillance-video analysis, with explainability, model evaluation, and inference APIs.</p>
-        <ul class="project-stack" aria-label="Technologies"><li>PyTorch</li><li>TensorFlow</li><li>FastAPI</li><li>Django</li></ul>
-        <a class="project-source" href="https://github.com/georgeemiL787/Cellula_Computer_Vision_Internship" target="_blank" rel="noreferrer" aria-label="Explore Cellula Computer Vision Internship on GitHub">Explore repository <span aria-hidden="true">&nearr;</span></a>
-      </div>
-      <div class="project-card" data-category="vision" data-title="MTC-AIC4 Aerial Tracking" data-description="Reproducible competition package for efficient aerial single-object tracking with SiamAPN integration, cached reconstruction, validation reports, and deterministic submission hashes." data-link="https://github.com/georgeemiL787/MTC-AIC">
-        <span class="project-category">Aerial tracking &amp; reproducible ML</span>
-        <h3><a href="https://github.com/georgeemiL787/MTC-AIC" target="_blank" rel="noreferrer">MTC-AIC4 Aerial Tracking</a></h3>
-        <p>Created a competition-ready reproduction pipeline around SiamAPN with CUDA inference, sequence routing, checkpoint verification, cached rebuilds, validation reports, and exact submission hashes.</p>
-        <ul class="project-stack" aria-label="Technologies"><li>SiamAPN</li><li>CUDA</li><li>Python</li></ul>
-        <a class="project-source" href="https://github.com/georgeemiL787/MTC-AIC" target="_blank" rel="noreferrer" aria-label="Explore MTC-AIC4 Aerial Tracking on GitHub">Explore repository <span aria-hidden="true">&nearr;</span></a>
-      </div>
-      <div class="project-card" data-category="agents" data-title="George Job Agent" data-description="Local-first Windows desktop system that finds, scores, tailors, and tracks AI/ML job opportunities." data-link="https://github.com/georgeemiL787/George_job_agent">
-        <span class="project-category">Desktop automation &amp; applied AI</span>
-        <h3><a href="https://github.com/georgeemiL787/George_job_agent" target="_blank" rel="noreferrer">George Job Agent</a></h3>
-        <p>A Windows desktop assistant that collects and scores job opportunities, tailors CVs and cover letters, and tracks applications locally. Includes scheduling, run reports, and packaged desktop builds.</p>
-        <ul class="project-stack" aria-label="Technologies"><li>Python</li><li>PySide6</li><li>PostgreSQL</li><li>SQLite</li><li>LLMs</li></ul>
-        <a class="project-source" href="https://github.com/georgeemiL787/George_job_agent" target="_blank" rel="noreferrer" aria-label="Explore George Job Agent on GitHub">Explore repository <span aria-hidden="true">&nearr;</span></a>
-      </div>
-      <div class="project-card" data-category="web" data-title="NailedIT Healthcare Platform" data-description="Multi-role Node, Express, and MySQL healthcare platform with AI-assisted nail-image triage." data-link="https://github.com/georgeemiL787/software_project">
-        <span class="project-category">Healthcare &amp; full-stack development</span>
-        <h3><a href="https://github.com/georgeemiL787/software_project" target="_blank" rel="noreferrer">NailedIT Healthcare Platform</a></h3>
-        <p>A multi-role healthcare application with appointments, image uploads, notifications, and review queues. Supports optional TensorFlow.js inference for nail-image triage.</p>
-        <ul class="project-stack" aria-label="Technologies"><li>Node.js</li><li>Express</li><li>MySQL</li><li>TensorFlow.js</li></ul>
-        <a class="project-source" href="https://github.com/georgeemiL787/software_project" target="_blank" rel="noreferrer" aria-label="Explore NailedIT Healthcare Platform on GitHub">Explore repository <span aria-hidden="true">&nearr;</span></a>
-      </div>
-      <div class="project-card" data-category="web" data-title="Learning Management System" data-description="Collaborative ASP.NET Core MVC platform with Identity, role-based workflows, course management, approvals, and dashboards." data-link="https://github.com/georgeemiL787/Mcv_capstone_project">
-        <span class="project-category">Team project &amp; web engineering</span>
-        <h3><a href="https://github.com/georgeemiL787/Mcv_capstone_project" target="_blank" rel="noreferrer">Learning Management System - Team Project</a></h3>
-        <p>Contributed to an ASP.NET Core MVC platform with Identity, student/instructor/admin roles, course publishing and approval, dashboards, profiles, account security, and Entity Framework persistence.</p>
-        <ul class="project-stack" aria-label="Technologies"><li>ASP.NET Core</li><li>C#</li><li>Entity Framework</li></ul>
-        <a class="project-source" href="https://github.com/georgeemiL787/Mcv_capstone_project" target="_blank" rel="noreferrer" aria-label="Explore Learning Management System on GitHub">Explore repository <span aria-hidden="true">&nearr;</span></a>
-      </div>
-      <div class="project-card" data-category="vision" data-title="Paper Piano with Computer Vision" data-description="Real-time OpenCV application that detects a drawn keyboard and finger touches to trigger piano notes." data-link="https://github.com/georgeemiL787/piano_with_computer_vision">
-        <span class="project-category">Interactive computer vision</span>
-        <h3><a href="https://github.com/georgeemiL787/piano_with_computer_vision" target="_blank" rel="noreferrer">Paper Piano with Computer Vision</a></h3>
-        <p>Created a real-time webcam application that detects a hand-drawn piano, calibrates key points, validates finger touches, and maps interactions to audio playback.</p>
-        <ul class="project-stack" aria-label="Technologies"><li>Python</li><li>OpenCV</li><li>Real-time vision</li></ul>
-        <a class="project-source" href="https://github.com/georgeemiL787/piano_with_computer_vision" target="_blank" rel="noreferrer" aria-label="Explore Paper Piano on GitHub">Explore repository <span aria-hidden="true">&nearr;</span></a>
-      </div>
-      <div class="project-card" data-category="agents" data-title="Catherine — AI Study Partner" data-description="A study companion that turns captured learning material into contextual answers, summaries, flashcards, and quizzes. Combines OCR, speech processing, and semantic retrieval." data-link="https://github.com/georgeemiL787/Cath_ai_study_partner">
-        <span class="project-category">Multimodal AI &amp; learning</span>
-        <h3><a href="https://github.com/georgeemiL787/Cath_ai_study_partner" target="_blank" rel="noreferrer">Catherine — AI Study Partner</a></h3>
-        <p>A study companion that turns captured learning material into contextual answers, summaries, flashcards, and quizzes. Combines OCR, speech processing, and semantic retrieval.</p>
-        <ul class="project-stack" aria-label="Technologies"><li>FastAPI</li><li>React</li><li>OCR</li><li>RAG</li></ul>
-        <a class="project-source" href="https://github.com/georgeemiL787/Cath_ai_study_partner" target="_blank" rel="noreferrer" aria-label="Explore Catherine — AI Study Partner on GitHub">Explore repository <span aria-hidden="true">&nearr;</span></a>
-      </div>
-      <div class="project-card" data-category="vision" data-title="Face Mask Detection" data-description="Image and webcam mask detection with MobileNetV2 and ResNet50V2 models, training scripts, a web interface, and ONNX export." data-link="https://github.com/georgeemiL787/Face_mask_detection">
-        <span class="project-category">Computer vision &amp; transfer learning</span>
-        <h3><a href="https://github.com/georgeemiL787/Face_mask_detection" target="_blank" rel="noreferrer">Face Mask Detection</a></h3>
-        <p>Image and webcam mask detection with MobileNetV2 and ResNet50V2 models, training scripts, a web interface, and ONNX export.</p>
-        <ul class="project-stack" aria-label="Technologies"><li>TensorFlow</li><li>Keras</li><li>MobileNetV2</li><li>ONNX</li></ul>
-        <a class="project-source" href="https://github.com/georgeemiL787/Face_mask_detection" target="_blank" rel="noreferrer" aria-label="Explore Face Mask Detection on GitHub">Explore repository <span aria-hidden="true">&nearr;</span></a>
-      </div>
-      <div class="project-card" data-category="vision" data-title="ASL Sign Recognition" data-description="A webcam application that recognizes American Sign Language alphabet hand signs and displays text. Includes a PyTorch model, dataset utilities, and training and prediction scripts." data-link="https://github.com/georgeemiL787/Arabic_letters_in_sign_language">
-        <span class="project-category">Real-time vision &amp; accessibility</span>
-        <h3><a href="https://github.com/georgeemiL787/Arabic_letters_in_sign_language" target="_blank" rel="noreferrer">ASL Sign Recognition</a></h3>
-        <p>A webcam application that recognizes American Sign Language alphabet hand signs and displays text. Includes a PyTorch model, dataset utilities, and training and prediction scripts.</p>
-        <ul class="project-stack" aria-label="Technologies"><li>PyTorch</li><li>OpenCV</li><li>Python</li></ul>
-        <a class="project-source" href="https://github.com/georgeemiL787/Arabic_letters_in_sign_language" target="_blank" rel="noreferrer" aria-label="Explore ASL Sign Recognition on GitHub">Explore repository <span aria-hidden="true">&nearr;</span></a>
-      </div>
-      <div class="project-card" data-category="data" data-title="Email Spam Detection" data-description="A text-classification notebook covering message cleaning, word-count features, Naive Bayes training, and evaluation with precision, recall, and F1." data-link="https://github.com/georgeemiL787/Email_Spam_Detection">
-        <span class="project-category">Natural language processing &amp; ML</span>
-        <h3><a href="https://github.com/georgeemiL787/Email_Spam_Detection" target="_blank" rel="noreferrer">Email Spam Detection</a></h3>
-        <p>A text-classification notebook covering message cleaning, word-count features, Naive Bayes training, and evaluation with precision, recall, and F1.</p>
-        <ul class="project-stack" aria-label="Technologies"><li>scikit-learn</li><li>Naive Bayes</li><li>Pandas</li><li>NLP</li></ul>
-        <a class="project-source" href="https://github.com/georgeemiL787/Email_Spam_Detection" target="_blank" rel="noreferrer" aria-label="Explore Email Spam Detection on GitHub">Explore repository <span aria-hidden="true">&nearr;</span></a>
-      </div>
-      <div class="project-card" data-category="data" data-title="Supermarket Sales Analysis" data-description="Sales-data cleaning and analysis across three supermarket branches, with Power BI reports and documented insights into customer behavior, product categories, and sales trends." data-link="https://github.com/georgeemiL787/Supermarket_Sales_predictions_and_Data_Analysis">
-        <span class="project-category">Data analysis &amp; business intelligence</span>
-        <h3><a href="https://github.com/georgeemiL787/Supermarket_Sales_predictions_and_Data_Analysis" target="_blank" rel="noreferrer">Supermarket Sales Analysis</a></h3>
-        <p>Sales-data cleaning and analysis across three supermarket branches, with Power BI reports and documented insights into customer behavior, product categories, and sales trends.</p>
-        <ul class="project-stack" aria-label="Technologies"><li>Python</li><li>Power BI</li><li>Excel</li></ul>
-        <a class="project-source" href="https://github.com/georgeemiL787/Supermarket_Sales_predictions_and_Data_Analysis" target="_blank" rel="noreferrer" aria-label="Explore Supermarket Sales Analysis on GitHub">Explore repository <span aria-hidden="true">&nearr;</span></a>
-      </div>
-      <div class="project-card" data-category="data" data-title="IMDb Movie Analysis" data-description="An Excel analysis of movie ratings, genres, directors, and financial data using cleaned records, derived columns, pivot tables, and visualizations." data-link="https://github.com/georgeemiL787/IMDB_MOVIES_DATASET_ANALYSIS">
-        <span class="project-category">Exploratory analysis &amp; visualization</span>
-        <h3><a href="https://github.com/georgeemiL787/IMDB_MOVIES_DATASET_ANALYSIS" target="_blank" rel="noreferrer">IMDb Movie Analysis</a></h3>
-        <p>An Excel analysis of movie ratings, genres, directors, and financial data using cleaned records, derived columns, pivot tables, and visualizations.</p>
-        <ul class="project-stack" aria-label="Technologies"><li>Excel</li><li>Pivot tables</li><li>Data cleaning</li></ul>
-        <a class="project-source" href="https://github.com/georgeemiL787/IMDB_MOVIES_DATASET_ANALYSIS" target="_blank" rel="noreferrer" aria-label="Explore IMDb Movie Analysis on GitHub">Explore repository <span aria-hidden="true">&nearr;</span></a>
-      </div>
-    </div>
-    <p class="github-more"><a href="https://github.com/georgeemiL787?tab=repositories" target="_blank" rel="noreferrer">Browse all repositories on GitHub &nearr;</a></p>
-    <div id="project-modal" class="project-modal">
-      <div class="project-modal-content">
-        <span class="project-modal-close">&times;</span>
-        <h3 id="modal-project-title"></h3>
-        <p id="modal-project-description"></p>
-        <a id="modal-project-link" href="#" target="_blank" rel="noreferrer" class="hero-btn">View Project</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-  <section id="training" class="fade-in-section section-block">
-    <h2>Experience & Highlights</h2>
-    <div class="training-list">
+      <div class="skill-group"><h3>Engineering Tools</h3><ul class="skills-list"><li>Git</li><li>Linux</li><li>CI/CD</li><li>Jupyter / Colab</li><li>Proteus</li><li>PCB Design</li></ul></div></div></section>
+    <section id="training" class="section-block wrap"><div class="section-heading"><div><p class="eyebrow">04 / THE JOURNEY</p><h2>ALWAYS<br><span class="serif-word">building forward.</span></h2></div><p class="section-intro">Hands-on training, team projects, and competition experience. Each one adds another way to solve a problem.</p></div><div class="training-list">
       <div class="training-card"><strong><img src="NTI_logo.png" alt="NTI Logo" class="training-logo"> Agentic AI Trainee - NTI Hire Ready Program</strong><span class="training-date">Jun 2026 - Sep 2026</span><p class="training-description">Agentic AI track covering LLM agent orchestration, retrieval-augmented generation (RAG), MCP tool integration, guardrails, and agent evaluation through hands-on projects.</p></div>
-      <div class="training-card"><strong>Computer Vision Intern - Cellula Technologies</strong><span class="training-date">Jan 2026 - Apr 2026</span></div>
-      <div class="training-card"><strong>Machine Learning Intern - Elevvo Internship Program</strong><span class="training-date">Aug 2025 - Sep 2025</span></div>
-      <div class="training-card"><a href="#" class="training-link" data-cert="MCV_George_cer.pdf"><img src="mcv_logo.png" alt="MCV Logo" class="training-logo"> MVC Architecture & Development Internship</a><span class="training-date">2025</span></div>
-      <div class="training-card"><strong>Shell Eco-marathon Autonomous Programming Competition - 2nd Place</strong><span class="training-date">Perception Engineer - camera-LiDAR fusion and autonomous perception</span></div>
-      <div class="training-card"><a href="#" class="training-link" data-cert="George Emil Data analysis cer.pdf"><img src="NTI_logo.png" alt="NTI Logo" class="training-logo"> Data Analysis Training - NTI</a><span class="training-date">Jul 2024 - Sep 2024</span></div>
-    </div>
-    <div id="cert-modal" class="cert-modal">
-      <div class="cert-modal-content">
-        <span class="cert-modal-close">&times;</span>
-        <embed id="cert-embed" src="" type="application/pdf" width="100%" height="500" style="display:none;">
-        <img id="cert-img" src="" alt="Certificate Preview" style="display:none;max-width:100%;max-height:500px;">
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-  <section id="contact" class="fade-in-section section-block">
-    <div class="contact-section-bg">
-      <h2 style="text-align:center;">Let's Build Something Useful</h2>
-      <p class="contact-subtitle">I am open to applied AI, computer vision, and machine learning engineering opportunities.</p>
-      <span class="contact-accent"></span>
-      <form id="contact-form" action="https://formspree.io/f/xjkrpnkj" method="POST">
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-        <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
-        <button type="submit">Send Message</button>
-        <div id="form-feedback" style="display:none;"></div>
-      </form>
-      <div class="contact-or"><span class="contact-or-circle">or</span></div>
-      <div class="contact-info-simple"><div class="contact-label">Email</div><a href="mailto:georgeemil030@gmail.com" class="contact-email">georgeemil030@gmail.com</a></div>
-    </div>
-  </section>
-
-  <footer><p>&copy; 2026 George Emil Sadek. All rights reserved.</p></footer>
-  <button id="scrollToTopBtn" title="Back to top" aria-label="Back to top" style="display:none;position:fixed;bottom:30px;right:30px;z-index:1000;font-size:1rem;padding:0.75rem;border-radius:50%;background:#2a5298;color:#fff;border:none;box-shadow:0 2px 8px rgba(30,60,114,0.10);cursor:pointer;">Up</button>
+      <div class="training-card"><strong><img src="assets/cellula-logo.png" alt="Cellula Technologies logo" class="training-logo" width="48" height="48" loading="lazy"><span>Computer Vision Intern - Cellula Technologies</span></strong><span class="training-date">Jan 2026 - Apr 2026</span></div>
+      <div class="training-card"><strong><img src="assets/elevvo-logo.svg" alt="Elevvo logo" class="training-logo" width="48" height="48" loading="lazy"><span>Machine Learning Intern - Elevvo Internship Program</span></strong><span class="training-date">Aug 2025 - Sep 2025</span></div>
+      <div class="training-card"><a href="MCV_George_cer.pdf" class="training-link" data-cert="MCV_George_cer.pdf"><img src="mcv_logo.png" alt="MCV Logo" class="training-logo"> MCV — MVC Architecture &amp; Development Internship</a><span class="training-date">2025</span></div>
+      <div class="training-card"><strong><img src="assets/shell-logo.svg" alt="Shell logo" class="training-logo" width="48" height="48" loading="lazy"><span>Shell Eco-marathon Autonomous Programming Competition - 2nd Place</span></strong><span class="training-date">Perception Engineer - camera-LiDAR fusion and autonomous perception</span></div>
+      <div class="training-card"><a href="George Emil Data analysis cer.pdf" class="training-link" data-cert="George Emil Data analysis cer.pdf"><img src="NTI_logo.png" alt="NTI Logo" class="training-logo"> Data Analysis Training - NTI</a><span class="training-date">Jul 2024 - Sep 2024</span></div></div></section>
+    <section id="contact" class="section-block contact-section"><div class="wrap"><p class="eyebrow">05 / WHAT’S NEXT?</p><div class="contact-layout"><div><h2>GOOD IDEAS<br>START WITH<br><span class="serif-word">a conversation.</span></h2><p class="contact-subtitle">Have an interesting problem or an AI engineering opportunity? Let’s talk about it.</p><a class="contact-email" href="mailto:georgeemil030@gmail.com">georgeemil030@gmail.com <span>↗</span></a></div><form id="contact-form" action="https://formspree.io/f/xjkrpnkj" method="POST"><label for="name">YOUR NAME</label><input type="text" id="name" name="name" placeholder="What should I call you?" autocomplete="name" required><label for="email">YOUR EMAIL</label><input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" required><label for="message">YOUR IDEA</label><textarea id="message" name="message" placeholder="Tell me a little about it…" rows="3" required></textarea><button type="submit">Send a message <span aria-hidden="true">↗</span></button><p id="form-feedback" role="status" aria-live="polite" hidden></p></form></div></div></section>
+  </main>
+  <footer class="wrap"><a class="footer-name" href="#home">GEORGE EMIL<span>↗</span></a><div class="footer-bottom"><p>© 2026 George Emil Sadek</p><p>BUILT WITH CURIOSITY.</p><a href="#home">BACK TO TOP ↑</a></div></footer>
+  <dialog id="project-modal" aria-labelledby="modal-project-title"><button type="button" class="modal-close" aria-label="Close project details">×</button><p class="eyebrow">PROJECT NOTES</p><h2 id="modal-project-title"></h2><p id="modal-project-description"></p><a id="modal-project-link" class="solid-link" href="#" target="_blank" rel="noreferrer">Explore on GitHub ↗</a></dialog>
+  <dialog id="cert-modal" aria-labelledby="cert-title"><button type="button" class="modal-close" aria-label="Close certificate">×</button><h2 id="cert-title">Training certificate</h2><iframe id="cert-embed" title="Training certificate preview"></iframe><a id="cert-link" class="solid-link" href="#" target="_blank" rel="noreferrer">Open certificate ↗</a></dialog>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <button type="button" class="motion-toggle" aria-pressed="false" aria-label="Pause animations" hidden><span aria-hidden="true">Ⅱ</span> Motion on</button>
   <script src="script.js"></script>
+  <script src="motion.js"></script>
 </body>
 </html>

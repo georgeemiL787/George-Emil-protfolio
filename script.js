@@ -1,264 +1,126 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const faders = document.querySelectorAll('.fade-in-section');
-  const appearOptions = {
-    threshold: 0,
-    rootMargin: '0px 0px -40px 0px'
-  };
-  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    });
-  }, appearOptions);
-  faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-  });
-});
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const nav = document.querySelector('.main-nav');
+const navLinks = [...nav.querySelectorAll('ul a')];
+const sections = [...document.querySelectorAll('main > section[id]')];
 
-// Highlight nav link based on scroll position
-const navLinks = document.querySelectorAll('.main-nav ul li a');
-const sections = [
-  document.getElementById('about'),
-  document.getElementById('skills'),
-  document.getElementById('projects'),
-  document.getElementById('training'),
-  document.getElementById('contact')
-];
-const sectionIds = ['about', 'skills', 'projects', 'training', 'contact'];
-
-window.addEventListener('scroll', () => {
+// Keep offsets accurate when the mobile navigation wraps.
+function updateActiveSection() {
   let current = '';
-  const scrollY = window.pageYOffset;
-  const navOffset = document.querySelector('.main-nav').offsetHeight + 16;
-
-  sections.forEach((section, idx) => {
-    if (section && section.offsetTop - navOffset <= scrollY) {
-      current = sectionIds[idx];
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${current}`) {
-      link.classList.add('active');
-    }
-  });
-});
-
-// Typewriter effect for subtitle
-const typewriterText = ["Applied AI Engineer", "Computer Vision Engineer", "ML Backend Builder", "Autonomous Perception Engineer"];
-const typewriterElem = document.getElementById('typewriter');
-let typeIdx = 0, charIdx = 0, isDeleting = false;
-function typeWriter() {
-  if (!typewriterElem) return;
-  const current = typewriterText[typeIdx % typewriterText.length];
-  if (isDeleting) {
-    typewriterElem.textContent = current.substring(0, charIdx--);
-    if (charIdx < 0) {
-      isDeleting = false;
-      typeIdx++;
-      setTimeout(typeWriter, 600);
-      return;
-    }
-  } else {
-    typewriterElem.textContent = current.substring(0, charIdx++);
-    if (charIdx > current.length) {
-      isDeleting = true;
-      setTimeout(typeWriter, 1200);
-      return;
-    }
+  for (const section of sections) {
+    if (section.getBoundingClientRect().top <= nav.offsetHeight + 40) current = section.id;
   }
-  setTimeout(typeWriter, isDeleting ? 40 : 90);
+  for (const link of navLinks) {
+    const active = link.hash === `#${current}`;
+    link.classList.toggle('active', active);
+    if (active) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  }
 }
-typeWriter();
+window.addEventListener('scroll', updateActiveSection, { passive: true });
+window.addEventListener('resize', updateActiveSection);
+updateActiveSection();
 
-// Smooth scroll for nav links
-const navLinksSmooth = document.querySelectorAll('.main-nav ul li a');
-navLinksSmooth.forEach(link => {
-  link.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const target = document.querySelector(href);
-      if (target) {
-        window.scrollTo({
-          top: target.offsetTop - document.querySelector('.main-nav').offsetHeight - 16,
-          behavior: 'smooth'
-        });
-      }
-    }
-  });
-});
-
-// Scroll to top button
-const scrollBtn = document.getElementById('scrollToTopBtn');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    scrollBtn.style.display = 'block';
-    scrollBtn.classList.add('show');
-    scrollBtn.classList.remove('hide');
-  } else {
-    scrollBtn.classList.add('hide');
-    scrollBtn.classList.remove('show');
-    setTimeout(() => { scrollBtn.style.display = 'none'; }, 300);
-  }
-});
-scrollBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Dark mode toggle
-const darkToggle = document.getElementById('dark-mode-toggle');
-darkToggle.addEventListener('click', () => {
-  const isDarkMode = document.body.classList.toggle('dark-mode');
-  darkToggle.textContent = isDarkMode ? 'Light' : 'Dark';
-  const label = isDarkMode ? 'Switch to light mode' : 'Switch to dark mode';
-  darkToggle.setAttribute('aria-label', label);
-  darkToggle.title = label;
-});
-
-// Contact form validation and feedback
-const contactForm = document.getElementById('contact-form');
-const feedback = document.getElementById('form-feedback');
-contactForm.addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-  if (!name || !email || !message) {
-    feedback.textContent = 'Please fill in all fields.';
-    feedback.className = 'error';
-    feedback.style.display = 'block';
-    return;
-  }
-  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-    feedback.textContent = 'Please enter a valid email address.';
-    feedback.className = 'error';
-    feedback.style.display = 'block';
-    return;
-  }
-  feedback.textContent = 'Sending...';
-  feedback.className = '';
-  feedback.style.display = 'block';
-  try {
-    const response = await fetch('https://formspree.io/f/xjkrpnkj', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: new FormData(contactForm)
-    });
-    if (response.ok) {
-      feedback.textContent = 'Message sent successfully!';
-      feedback.className = 'success';
-      contactForm.reset();
-    } else {
-      feedback.textContent = 'There was an error sending your message. Please try again later.';
-      feedback.className = 'error';
-    }
-  } catch (error) {
-    feedback.textContent = 'There was an error sending your message. Please try again later.';
-    feedback.className = 'error';
-  }
-  setTimeout(() => { feedback.style.display = 'none'; }, 3500);
-});
-
-// Animate skill progress bars when in view
-function animateSkillBars() {
-  document.querySelectorAll('.skill-progress').forEach(bar => {
-    const percent = bar.getAttribute('data-skill');
-    const skillBar = bar.querySelector('.skill-bar');
-    if (bar.getBoundingClientRect().top < window.innerHeight - 40) {
-      skillBar.style.width = percent + '%';
-    }
-  });
+// Theme preference stays on this device; the editorial dark theme is the default.
+const themeButton = document.getElementById('dark-mode-toggle');
+function applyTheme(dark) {
+  document.body.classList.toggle('dark-mode', dark);
+  themeButton.innerHTML = `${dark ? 'Light' : 'Dark'} <span aria-hidden="true">◐</span>`;
+  const label = `Switch to ${dark ? 'light' : 'dark'} mode`;
+  themeButton.setAttribute('aria-label', label);
+  themeButton.title = label;
+  document.querySelector('meta[name="theme-color"]').content = dark ? '#111b20' : '#efeee7';
 }
-window.addEventListener('scroll', animateSkillBars);
-window.addEventListener('DOMContentLoaded', animateSkillBars);
+try { applyTheme(localStorage.getItem('portfolio-theme') !== 'light'); } catch { applyTheme(true); }
+themeButton.addEventListener('click', () => {
+  const dark = !document.body.classList.contains('dark-mode');
+  applyTheme(dark);
+  try { localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light'); } catch { /* Storage may be disabled. */ }
+});
 
-// Certificate modal logic
-const certModal = document.getElementById('cert-modal');
-const certEmbed = document.getElementById('cert-embed');
-const certImg = document.getElementById('cert-img');
-const certClose = document.querySelector('.cert-modal-close');
-document.querySelectorAll('.training-link').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const cert = this.getAttribute('data-cert');
-    if (!cert) return;
-    certModal.classList.add('show');
-    if (cert.endsWith('.pdf')) {
-      certEmbed.src = cert;
-      certEmbed.style.display = 'block';
-      certImg.style.display = 'none';
-    } else {
-      certImg.src = cert;
-      certImg.style.display = 'block';
-      certEmbed.style.display = 'none';
-    }
+// Native anchors retain working navigation without JavaScript.
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', event => {
+    if (link.hash.length < 2) return;
+    const target = document.querySelector(link.hash);
+    if (!target) return;
+    event.preventDefault();
+    const top = target.getBoundingClientRect().top + window.scrollY - nav.offsetHeight - 20;
+    const pauseMotion = reducedMotion.matches || document.body.classList.contains('motion-paused');
+    window.scrollTo({ top, behavior: pauseMotion ? 'instant' : 'smooth' });
+    history.replaceState(null, '', link.hash);
   });
 });
-certClose.addEventListener('click', () => {
-  certModal.classList.remove('show');
-  certEmbed.src = '';
-  certImg.src = '';
-});
-window.addEventListener('click', (e) => {
-  if (e.target === certModal) {
-    certModal.classList.remove('show');
-    certEmbed.src = '';
-    certImg.src = '';
-  }
-});
 
-// Project category filters; all projects remain visible without JavaScript.
-const projectFilters = document.querySelector('.project-filters');
-const projectCards = document.querySelectorAll('#project-grid .project-card');
-const projectCount = document.getElementById('project-count');
-projectCount.textContent = `${projectCards.length} projects`;
-projectFilters.hidden = false;
-projectFilters.querySelectorAll('button').forEach(button => {
+const filters = document.querySelector('.project-filters');
+const grid = document.getElementById('project-grid');
+const cards = [...grid.querySelectorAll('.project-card')];
+const count = document.getElementById('project-count');
+filters.hidden = false;
+filters.querySelectorAll('button').forEach(button => {
   button.addEventListener('click', () => {
-    const filter = button.dataset.filter;
-    let visibleCount = 0;
-    projectCards.forEach(card => {
-      card.hidden = filter !== 'all' && card.dataset.category !== filter;
-      if (!card.hidden) visibleCount++;
-    });
-    projectFilters.querySelectorAll('button').forEach(option => {
-      option.setAttribute('aria-pressed', String(option === button));
-    });
-    projectCount.textContent = filter === 'all'
-      ? `${visibleCount} projects`
-      : `${visibleCount} of ${projectCards.length} projects`;
+    const category = button.dataset.filter;
+    cards.forEach(card => { card.hidden = category !== 'all' && card.dataset.category !== category; });
+    grid.classList.toggle('is-filtered', category !== 'all');
+    filters.querySelectorAll('button').forEach(option => option.setAttribute('aria-pressed', String(option === button)));
+    const visible = cards.filter(card => !card.hidden).length;
+    count.textContent = category === 'all' ? `${visible} projects` : `${visible} / ${cards.length} projects`;
   });
 });
 
-// Project modal logic
-const projectModal = document.getElementById('project-modal');
-const projectTitle = document.getElementById('modal-project-title');
-const projectDesc = document.getElementById('modal-project-description');
-const projectLink = document.getElementById('modal-project-link');
-const projectClose = document.querySelector('.project-modal-close');
-document.querySelectorAll('.project-card').forEach(card => {
-  card.addEventListener('click', function(e) {
-    // Prevent link click from opening modal
-    if (e.target.closest('a')) return;
-    projectTitle.textContent = card.getAttribute('data-title');
-    projectDesc.textContent = card.getAttribute('data-description');
-    projectLink.href = card.getAttribute('data-link');
-    if (card.getAttribute('data-link').endsWith('.pdf')) {
-      projectLink.setAttribute('target', '_blank');
-    } else {
-      projectLink.setAttribute('target', '_blank'); // keep default for other links
-    }
-    projectModal.classList.add('show');
+// Native dialogs provide Escape handling, focus trapping, and focus restoration.
+const projectDialog = document.getElementById('project-modal');
+cards.forEach(card => {
+  card.querySelector('.project-details').addEventListener('click', () => {
+    document.getElementById('modal-project-title').textContent = card.dataset.title;
+    document.getElementById('modal-project-description').textContent = card.dataset.description;
+    document.getElementById('modal-project-link').href = card.dataset.link;
+    projectDialog.showModal();
   });
 });
-projectClose.addEventListener('click', () => {
-  projectModal.classList.remove('show');
+const certDialog = document.getElementById('cert-modal');
+document.querySelectorAll('.training-link[data-cert]').forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+    document.getElementById('cert-embed').src = link.dataset.cert;
+    document.getElementById('cert-link').href = link.dataset.cert;
+    certDialog.showModal();
+  });
+  link.href = link.dataset.cert;
 });
-window.addEventListener('click', (e) => {
-  if (e.target === projectModal) {
-    projectModal.classList.remove('show');
+certDialog.addEventListener('close', () => document.getElementById('cert-embed').removeAttribute('src'));
+document.querySelectorAll('dialog').forEach(dialog => {
+  dialog.querySelector('.modal-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const rect = dialog.getBoundingClientRect();
+    if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+  });
+});
+
+// Keep the existing contact endpoint and provide persistent, accessible feedback.
+const form = document.getElementById('contact-form');
+const feedback = document.getElementById('form-feedback');
+form.addEventListener('submit', async event => {
+  event.preventDefault();
+  const submit = form.querySelector('button[type="submit"]');
+  if (submit.disabled) return;
+  const values = ['name', 'email', 'message'].map(id => document.getElementById(id).value.trim());
+  feedback.hidden = false;
+  if (values.some(value => !value)) {
+    feedback.className = 'error';
+    feedback.textContent = 'Please complete each field before sending.';
+    return;
   }
+  submit.disabled = true;
+  feedback.className = '';
+  feedback.textContent = 'Sending your message…';
+  try {
+    const response = await fetch(form.action, {method:'POST', headers:{Accept:'application/json'}, body:new FormData(form)});
+    if (!response.ok) throw new Error('Request failed');
+    feedback.textContent = 'Message sent. Thank you for reaching out!';
+    form.reset();
+  } catch {
+    feedback.className = 'error';
+    feedback.textContent = 'The message could not be sent. Please try again or email me directly.';
+  } finally { submit.disabled = false; }
 });
