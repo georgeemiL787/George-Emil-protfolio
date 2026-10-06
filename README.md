@@ -38,6 +38,8 @@ The editorial design is inspired by [Superdesign's Bold Editorial Design Style](
 
 This remains a static HTML/CSS/JavaScript site suitable for GitHub Pages. No build step is required. Run `python -m http.server 8765` from this folder to preview it locally. Fonts load from Google Fonts, with local font fallbacks.
 
+Publishing uses `.github/workflows/pages.yml`: pushes to `main` or a manual run of **Deploy portfolio** upload the static files directly to GitHub Pages. In repository Settings → Pages, the source is **GitHub Actions**. The workflow includes the site assets, logos, and certificate PDFs and does not run Jekyll.
+
 Features include responsive project filters, a saved theme preference, native accessible project/certificate dialogs, reduced-motion support, and the existing Formspree contact form. Project artwork is illustrative, not a product screenshot.
 
 `motion.css` and `motion.js` add staggered headline entrances, a pointer-responsive particle network, orbiting rings, a continuous discipline marquee, scroll reveals, animated project filtering, artwork tilt and category-specific animation, and a rotating accent on the portrait. The canvas pauses outside the viewport and when the tab is hidden. The floating motion control saves a pause preference; the system reduced-motion setting disables movement automatically. Content remains available without JavaScript, with the original SVG sphere as a fallback.
