@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const faders = document.querySelectorAll('.fade-in-section');
   const appearOptions = {
-    threshold: 0.15,
+    threshold: 0,
     rootMargin: '0px 0px -40px 0px'
   };
   const appearOnScroll = new IntersectionObserver(function(entries, observer) {
@@ -22,16 +22,18 @@ const sections = [
   document.getElementById('about'),
   document.getElementById('skills'),
   document.getElementById('projects'),
+  document.getElementById('training'),
   document.getElementById('contact')
 ];
-const sectionIds = ['about', 'skills', 'projects', 'contact'];
+const sectionIds = ['about', 'skills', 'projects', 'training', 'contact'];
 
 window.addEventListener('scroll', () => {
   let current = '';
   const scrollY = window.pageYOffset;
+  const navOffset = document.querySelector('.main-nav').offsetHeight + 16;
 
   sections.forEach((section, idx) => {
-    if (section && section.offsetTop - 80 <= scrollY) {
+    if (section && section.offsetTop - navOffset <= scrollY) {
       current = sectionIds[idx];
     }
   });
@@ -81,7 +83,7 @@ navLinksSmooth.forEach(link => {
       const target = document.querySelector(href);
       if (target) {
         window.scrollTo({
-          top: target.offsetTop - 60,
+          top: target.offsetTop - document.querySelector('.main-nav').offsetHeight - 16,
           behavior: 'smooth'
         });
       }
@@ -109,8 +111,11 @@ scrollBtn.addEventListener('click', () => {
 // Dark mode toggle
 const darkToggle = document.getElementById('dark-mode-toggle');
 darkToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  darkToggle.textContent = document.body.classList.contains('dark-mode') ? 'Light' : 'Dark';
+  const isDarkMode = document.body.classList.toggle('dark-mode');
+  darkToggle.textContent = isDarkMode ? 'Light' : 'Dark';
+  const label = isDarkMode ? 'Switch to light mode' : 'Switch to dark mode';
+  darkToggle.setAttribute('aria-label', label);
+  darkToggle.title = label;
 });
 
 // Contact form validation and feedback
@@ -205,6 +210,29 @@ window.addEventListener('click', (e) => {
   }
 });
 
+// Project category filters; all projects remain visible without JavaScript.
+const projectFilters = document.querySelector('.project-filters');
+const projectCards = document.querySelectorAll('#project-grid .project-card');
+const projectCount = document.getElementById('project-count');
+projectCount.textContent = `${projectCards.length} projects`;
+projectFilters.hidden = false;
+projectFilters.querySelectorAll('button').forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+    let visibleCount = 0;
+    projectCards.forEach(card => {
+      card.hidden = filter !== 'all' && card.dataset.category !== filter;
+      if (!card.hidden) visibleCount++;
+    });
+    projectFilters.querySelectorAll('button').forEach(option => {
+      option.setAttribute('aria-pressed', String(option === button));
+    });
+    projectCount.textContent = filter === 'all'
+      ? `${visibleCount} projects`
+      : `${visibleCount} of ${projectCards.length} projects`;
+  });
+});
+
 // Project modal logic
 const projectModal = document.getElementById('project-modal');
 const projectTitle = document.getElementById('modal-project-title');
@@ -214,7 +242,7 @@ const projectClose = document.querySelector('.project-modal-close');
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('click', function(e) {
     // Prevent link click from opening modal
-    if (e.target.tagName === 'A') return;
+    if (e.target.closest('a')) return;
     projectTitle.textContent = card.getAttribute('data-title');
     projectDesc.textContent = card.getAttribute('data-description');
     projectLink.href = card.getAttribute('data-link');

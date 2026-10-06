@@ -13,6 +13,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 header.hero {
+  position: relative;
   background: linear-gradient(120deg, #1e3c72, #2a5298);
   color: #fff;
   text-align: center;
@@ -113,11 +114,21 @@ form button:hover {
     padding: 1rem;
   }
   nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    padding: 0.4rem;
   }
   nav ul li {
-    margin: 0.5rem 0;
+    margin: 0;
+  }
+  .main-nav ul li a,
+  body.dark-mode .main-nav ul li a.active {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
   }
   .profile-pic {
     width: 100px;
@@ -357,6 +368,93 @@ section:hover {
   justify-content: center;
   margin-top: 2.5rem;
 }
+.section-intro {
+  color: #526078;
+  line-height: 1.7;
+  max-width: 65ch;
+}
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.project-filters[hidden],
+.project-card[hidden] {
+  display: none;
+}
+.project-filters button {
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-height: 44px;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid #cfd8e8;
+  border-radius: 999px;
+  background: #f7f9fb;
+  color: #23407a;
+  cursor: pointer;
+}
+.project-filters button:hover,
+.project-filters button[aria-pressed="true"] {
+  background: #23407a;
+  border-color: #23407a;
+  color: #fff;
+}
+.project-filters button:focus-visible,
+.project-source:focus-visible {
+  outline: 3px solid #4ea1f7;
+  outline-offset: 3px;
+}
+.project-count {
+  color: #526078;
+  font-size: 0.85rem;
+  margin: 1rem 0 0;
+}
+.github-more {
+  text-align: center;
+  margin: 2rem 0 0;
+}
+.github-more a {
+  color: #23407a;
+  font-weight: 600;
+}
+.project-category {
+  color: #526078;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  line-height: 1.5;
+}
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0;
+}
+.project-stack li {
+  background: #edf2fa;
+  color: #23407a;
+  border-radius: 6px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.project-card a.project-source {
+  margin-top: auto;
+  padding-top: 1rem;
+  width: 100%;
+  border-top: 1px solid rgba(30,60,114,0.12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
 .project-card {
   background: #fff;
   border-radius: 24px;
@@ -394,6 +492,7 @@ section:hover {
   font-size: 1.08rem;
   margin: 0;
   font-weight: 400;
+  line-height: 1.65;
 }
 @media (max-width: 900px) {
   .projects-list {
@@ -760,6 +859,39 @@ body.dark-mode .project-card h3 {
 body.dark-mode .project-card p {
   color: #ffffff;
 }
+.training-description {
+  margin: 0.75rem 0 0;
+  line-height: 1.65;
+}
+
+body.dark-mode .section-intro,
+body.dark-mode .project-count,
+body.dark-mode .project-category {
+  color: #b6c5dc;
+}
+body.dark-mode .project-filters button {
+  background: #2a3a4a;
+  border-color: #3a4a5a;
+  color: #e3e6ee;
+}
+body.dark-mode .project-filters button:hover,
+body.dark-mode .project-filters button[aria-pressed="true"] {
+  background: #4ea1f7;
+  border-color: #4ea1f7;
+  color: #0a0e17;
+}
+body.dark-mode .github-more a {
+  color: #6bb3ff;
+}
+
+body.dark-mode .project-stack li {
+  background: #2a3a4a;
+  color: #e3e6ee;
+}
+
+body.dark-mode .project-card a.project-source {
+  border-color: #3a4a5a;
+}
 
 body.dark-mode .skill-group h3 {
   color: #ffffff;
@@ -812,10 +944,18 @@ body.dark-mode #form-feedback.success {
   right: 1.5rem;
   background: rgba(255,255,255,0.1);
   border: 2px solid rgba(255,255,255,0.2);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.7rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.5rem;
+  min-height: 44px;
+  padding: 0.6rem 1rem;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
   cursor: pointer;
   color: #fff;
   z-index: 100;
@@ -828,6 +968,18 @@ body.dark-mode #form-feedback.success {
   border-color: rgba(255,255,255,0.4);
   transform: scale(1.1);
   color: #ffd700;
+}
+
+#dark-mode-toggle:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  #dark-mode-toggle {
+    top: 1rem;
+    right: 1rem;
+  }
 }
 
 body.dark-mode #dark-mode-toggle {
