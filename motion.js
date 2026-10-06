@@ -69,17 +69,18 @@
   });
 
   document.querySelectorAll('.project-art').forEach(art => {
-    art.addEventListener('pointermove', event => {
+    const card = art.closest('.project-card');
+    card.addEventListener('pointermove', event => {
       if (paused || event.pointerType !== 'mouse') return;
       const box = art.getBoundingClientRect();
-      const x = (event.clientX - box.left) / box.width;
-      const y = (event.clientY - box.top) / box.height;
+      const x = Math.max(0, Math.min(1, (event.clientX - box.left) / box.width));
+      const y = Math.max(0, Math.min(1, (event.clientY - box.top) / box.height));
       art.style.setProperty('--pointer-x', `${x * 100}%`);
       art.style.setProperty('--pointer-y', `${y * 100}%`);
       art.style.setProperty('--tilt-x', `${(y - .5) * -14}deg`);
       art.style.setProperty('--tilt-y', `${(x - .5) * 14}deg`);
     });
-    art.addEventListener('pointerleave', () => {
+    card.addEventListener('pointerleave', () => {
       art.style.setProperty('--tilt-x', '0deg');
       art.style.setProperty('--tilt-y', '0deg');
     });

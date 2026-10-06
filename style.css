@@ -416,6 +416,7 @@ h1 span {
   gap:38px 24px;
 }
 .project-card {
+  position:relative;
   grid-column:span 2;
   display:flex;
   flex-direction:column;
@@ -517,6 +518,20 @@ body:not(.dark-mode) .art-data {
 .project-card h3 {
   margin-bottom:14px;
 }
+.project-primary-link:after {
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:1;
+  cursor:pointer;
+}
+.project-primary-link:hover,.project-primary-link:focus-visible {
+  color:var(--accent);
+}
+.project-primary-link:focus-visible:after {
+  outline:2px solid var(--accent);
+  outline-offset:6px;
+}
 .featured h3 {
   font-size:32px;
 }
@@ -541,6 +556,8 @@ body:not(.dark-mode) .art-data {
   color:var(--muted);
 }
 .project-actions {
+  position:relative;
+  z-index:2;
   margin-top:auto;
   padding-top:15px;
   border-top:1px solid var(--line);
